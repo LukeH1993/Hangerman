@@ -1,13 +1,13 @@
 body {
 	background-color: orange;
-	padding: 50px 50px;
+	padding: 30px 30px;
 }
 
 .instructions {
 	margin: 0 auto;
 	position: fixed;
-	z-index: 2;
-	height: 700px;
+	z-index: 3;
+	height: 720px;
 	width: 800px;
 	background-color: red;
 	text-align: center;
@@ -34,8 +34,8 @@ body {
 .game {
 	margin: 0 auto;
 	position: fixed;
-	z-index: 1;
-	height: 700px;
+	z-index: 2;
+	height: 720px;
 	width: 800px;
 	background-color: red;
 	text-align: center;
@@ -55,9 +55,10 @@ body {
 #pole_top {
 	margin: 0 auto;
 	display: inline-block;
-	float: center;
+	position: fixed;
+	float: top;
 	height: 10px;
-	width: 100px;
+	width: 168px;
 	background-color: black;
 	border-radius: 100px;
 }
@@ -66,8 +67,8 @@ body {
 	margin: 0 auto;
 	margin-top: 50px;
 	display: inline-block;
-	float: center;
-	height: 100px;
+	float: top-center;
+	height: 250px;
 	width: 10px;
 	background-color: black;
 	border-radius: 100px;
@@ -86,11 +87,13 @@ body {
 .hangman {
 	display: inline-block;
 	float: center;
+	padding: 1px 50px;
 }
 
 .pole {
 	display: inline-block;
 	float: center;
+	padding: 1px 50px;
 }
 
 #head {
@@ -151,4 +154,16 @@ body {
 	width: 20px;
 	background-color: black;
 	border-radius: none;
+}
+
+.end {
+	margin: 0 auto;
+	position: fixed;
+	z-index: 1;
+	height: 720px;
+	width: 800px;
+	background-color: red;
+	text-align: center;
+	border: solid black 3px;
+	border-radius: 10px;
 }

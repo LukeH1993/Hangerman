@@ -4,24 +4,36 @@
 <head>
 
 	<title>Hangman</title>
+
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
 	<script type="text/javascript" src="js/main.js"></script>
 
 </head>
 
 <body>
 
-	<div class="body">
+	<div class="container">
 
 		<div class="instructions">
+
 			<h1 id="inst_heading">Hangman</h1>
-			<p id="inst_paragraph">Paragraph</p>
+
+			<p id="inst_paragraph">A random word will be displayed on the screen. You're quest is to use your imagination and
+			guess the correct answer, which will score you points. If you guess wrong, you will lose a limb, as well as a point. 
+			Each correct guess will score you 10 points, but each incorrect guess will lose you 10 points. If you lose all your
+			limbs, you will lose all your points. Once you get 100 points, you have won the game.</p>
+
 			<button id="inst_button">Let's Play</button>
+
 		</div>
 
 		<div class="game">
-			<h2 id="game_score">Score</h2>
+
+			<h2 id="game_score">Score = 0</h2>
+
 			<div class="game_buttons">
 				<button class="letter">A</button>
 				<button class="letter">B</button>
@@ -50,8 +62,12 @@
 				<button class="letter">Y</button>
 				<button class="letter">Z</button>
 			</div>
+
 			<div class="blank_spaces"></div>
+
 			<div class="hangman">
+				<div id="pole_top"></div>
+				<div id="rope"></div>
 				<div id="head"></div>
 				<div id="left_arm"></div>
 				<div id="body"></div>
@@ -59,15 +75,17 @@
 				<div id="left_leg"></div>
 				<div id="right_leg"></div>
 			</div>
+
 			<div class="pole">
-				<div id="pole_top"></div>
 				<div id="pole"></div>
-				<div id="rope"></div>
 			</div>
+
 		</div>
 
 		<div class="end">
-			<h2 id="game_score">Score</h2>
+			<h2 id="game_score">Score = 0</h2>
+			<h3 id="win">Well Done! You've won the game! Aren't you a clever soul!</h3>
+			<h3 id="lose">Oh dear! You've lost all your limbs! And your guillotine! Try again?</h3>
 			<button id="reset">Reset Game</button>
 		</div>
 

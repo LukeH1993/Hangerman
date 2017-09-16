@@ -3,6 +3,7 @@ $ (function() {
 	//Variables
 	var words = ['hello', 'goodbye', 'sparta', 'global'];
 	var characters = null;
+	var letters = ['a', 'b', 'c']
 
 	console.log(words.length);
 
@@ -26,7 +27,9 @@ $ (function() {
 		$('.instructions').fadeOut();
 	});
 
+	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
+
 	// var myButtons = document.getElementsByClassName('.letter');
 	// console.log(myButtons);
 
@@ -34,4 +37,21 @@ $ (function() {
 	// 	myButtons[i].addEventListener('click', function (event) {
 	// 		console.log('a');
 	// 	});
+	// }
+
+	//var getLetters = function () {
+		//	if ('.letter' === letters[0]) {
+		//	  letters.innerHTML 
+		//	} else if ('.letter' === categories[1]) {
+		//}
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	// Sets a score for the game. Everytime a guess is incorrect and a hangman limb is lost, 
+	// the score will decrease but each time a guess is correct it will increase.
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	// Displays incorrect letters as they are typed.
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	// Resets the game once the reset button is selected.
 })
