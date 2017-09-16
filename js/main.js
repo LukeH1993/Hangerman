@@ -34,5 +34,4 @@ $ (function() {
 	// 	myButtons[i].addEventListener('click', function (event) {
 	// 		console.log('a');
 	// 	});
-	}
 })
