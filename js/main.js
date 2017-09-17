@@ -1,13 +1,20 @@
 $ (function() {
 
 	//Variables
-	var words = ['hello', 'goodbye', 'sparta', 'global'];
+	var words = ['chocolate', 'apple', 'orange', 'carrott' , 'crisps', 'cake'];
 	var characters = null;
-	//var letters = ['a', 'b', 'c'];
-	var score = 0;
+	var categories;
+	var chosenCategory;
+	// var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+	// 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+	// 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+	//var score = 0;
+	//var incorrect = [];
 
 	console.log(words.length);
 
+	//------------------------------------------------------------------------------------------------------------------------------
+	// Displays blank spaces onto the screen.
 	characters = getRandomWord();
 	console.log(characters);
 
@@ -32,6 +39,10 @@ $ (function() {
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
+	// $('.letter').on('click', function() {
+	// 	$('.letter').val(letters);
+	// 	letters.innerHTML;
+	// });
 
 	// var myButtons = document.getElementsByClassName('.letter');
 	// console.log(myButtons);
@@ -59,24 +70,48 @@ $ (function() {
 	// 	}
 	// }
 
-	function scoreLose() {
-		var loser = $('#lose').val(); //gets the value.
-		$('#lose').val('Oh dear! You have lost all your limbs! And your rope! Try again?'); //sets the value.
-	}
+	// function scoreLose() {
+	// 	var loser = $('#lose').val(); //gets the value.
+	// 	$('#lose').val('Oh dear! You have lost all your limbs! And your rope! Try again?'); //sets the value.
+	// }
 
-	console.log(scoreLose());
+	// console.log(scoreLose());
 
-	function scoreWin () {
-		var winner = $('#win').val();
-		$('#win').val('Well Done! You have won the game! You genius!');
-	}
+	// function scoreWin () {
+	// 	var winner = $('#win').val();
+	// 	$('#win').val('Well Done! You have won the game! You genius!');
+	// }
 
-	console.log(scoreWin());
+	// console.log(scoreWin());
+
+	// function hideLimb() {
+		// var next word;
+		// if (letters !== words) {
+		// 	$('#right_leg').fadeOut();
+		// } else if (next word) {
+		// 	$('#left_leg').fadeOut();
+		// } else if (next word) {
+		// 	$('#right_arm').fadeOut();
+		// } else if (next word) {
+		// 	$('#left_arm').fadeOut();
+		// } else if (next word) {
+		// 	$('#body').fadeOut();
+		// } else if (next word) {
+		// 	$('#head').fadeOut();
+		// } else if (next word) {
+		// 	$('#rope').fadeOut();
+		// } else if (next word) {
+		// 	$('#pole_top').fadeOut();
+		// }
+	// }
+
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays incorrect letters as they are typed.
 
 
-
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Resets the game once the reset button is selected.
+	$('#reset_button').on('click', function() {
+		$('.instructions').fadeIn();
+	});
 })

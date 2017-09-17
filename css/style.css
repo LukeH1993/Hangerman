@@ -1,6 +1,7 @@
 body {
-	background-color: orange;
-	padding: 30px 30px;
+	background-image: url('../images/hangman_background.jpg');
+	background-size: 400px 900px;
+	padding: 30px 60px;
 }
 
 .instructions {
@@ -8,7 +9,7 @@ body {
 	position: fixed;
 	z-index: 3;
 	height: 720px;
-	width: 800px;
+	width: 1200px;
 	background-color: red;
 	text-align: center;
 	border: solid black 3px;
@@ -36,7 +37,7 @@ body {
 	position: fixed;
 	z-index: 2;
 	height: 720px;
-	width: 800px;
+	width: 1200px;
 	background-color: red;
 	text-align: center;
 	border: solid black 3px;
@@ -161,7 +162,7 @@ body {
 	position: fixed;
 	z-index: 1;
 	height: 720px;
-	width: 800px;
+	width: 1200px;
 	background-color: red;
 	text-align: center;
 	border: solid black 3px;
