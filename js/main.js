@@ -3,7 +3,8 @@ $ (function() {
 	//Variables
 	var words = ['hello', 'goodbye', 'sparta', 'global'];
 	var characters = null;
-	var letters = ['a', 'b', 'c']
+	//var letters = ['a', 'b', 'c'];
+	var score = 0;
 
 	console.log(words.length);
 
@@ -14,6 +15,7 @@ $ (function() {
 	 	$('.blank_spaces').append('<div class="blanks">_</div>');
 	}
 
+	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays a new hangman word at random on the screen.
 	function getRandomWord() {
 		var random = Math.floor(Math.random() * words.length);
@@ -22,6 +24,7 @@ $ (function() {
 
 	console.log(getRandomWord());
 
+	//------------------------------------------------------------------------------------------------------------------------------
 	// Fades out instruction screen and displays the game screen.
 	$('#inst_button').on('click', function() {
 		$('.instructions').fadeOut();
@@ -48,9 +51,31 @@ $ (function() {
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Sets a score for the game. Everytime a guess is incorrect and a hangman limb is lost, 
 	// the score will decrease but each time a guess is correct it will increase.
+	// function score() {
+	// 	if (letters === words) {
+	// 		score++;
+	// 	} else {
+	// 		score--;
+	// 	}
+	// }
 
+	function scoreLose() {
+		var loser = $('#lose').val(); //gets the value.
+		$('#lose').val('Oh dear! You have lost all your limbs! And your rope! Try again?'); //sets the value.
+	}
+
+	console.log(scoreLose());
+
+	function scoreWin () {
+		var winner = $('#win').val();
+		$('#win').val('Well Done! You have won the game! You genius!');
+	}
+
+	console.log(scoreWin());
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays incorrect letters as they are typed.
+
+
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Resets the game once the reset button is selected.
