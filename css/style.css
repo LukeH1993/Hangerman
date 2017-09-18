@@ -85,6 +85,14 @@ body {
 	border-radius: 100px;
 }
 
+.hide {
+	visibility: hidden;
+}
+
+.show {
+	visibility: visible;
+}
+
 .hangman {
 	display: inline-block;
 	float: center;
@@ -95,14 +103,6 @@ body {
 	display: inline-block;
 	float: center;
 	padding: 1px 50px;
-}
-
-.hide {
-	visibility: hidden;
-}
-
-.show {
-	visibility: visible;
 }
 
 #head {

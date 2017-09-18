@@ -3,6 +3,7 @@ $ (function() {
 	//Variables
 	var words = ['chocolate', 'apple', 'orange', 'carrott' , 'crisps', 'cake'];
 	var characters = null;
+	var incorrect = 0;
 
 	console.log(words.length);
 
@@ -34,47 +35,46 @@ $ (function() {
 	// Displays letters on the screen when the user selects the letter buttons.
 
 	$('.letter').on('click', function () {
-		for(var i = 0; i < characters.length; i++) {
-			if($(this).val() === characters[i]) {
-				$('.blanks').eq(i).html($(this).val());
-				console.log($('.blanks').val());
+		if (characters.includes($(this).val())) {
+			for(var i = 0; i < characters.length; i++) {
+				if($(this).val() === characters[i]) {
+					$('.blanks').eq(i).html($(this).val());
+					console.log($('.blanks').val());
+				}
 			}
+			console.log($(this).val());
+		} else {
+			incorrect += 1;
+			hangman();
+			console.log(incorrect);
 		}
-		console.log($(this).val());
 	});
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Sets a score for the game. Everytime a guess is incorrect and a hangman limb is put on the screen.
+	// Sets a score for the game. Everytime a guess is inincorrect and a hangman limb is put on the screen.
 
-	function hangman(correctanswer) {
+	function hangman() {
 
-		if(correctanswer === 1) {
-			$('#pole').addClass('.show');
-		}
-		if(correctanswer === 2) {
-			$('#pole_top').addClass('.show');
-		}
-		if(correctanswer === 3) {
-			$('#rope').addClass('.show');
-		}
-		if(correctanswer === 4) {
-			$('#head').addClass('.show');
-		}
-		if(correctanswer === 5) {
-			$('#left_arm').addClass('.show');
-		}
-		if(correctanswer === 6) {
-			$('#body').addClass('.show');
-		}
-		if(correctanswer === 7) {
-			$('#right_arm').addClass('.show');
-		}
-		if(correctanswer === 8) {
-			$('left_leg').addClass('.show');
-		}
-		if(correctanswer === 9) {
-			$('right_leg').addClass('.show');
-			$('#lose').html('Loser').addClass('.show');
+		if (incorrect === 1) {
+			$('#pole').addClass('show');
+			console.log('I want to work!');
+		} else if (incorrect === 2) {
+			$('#pole_top').addClass('show');
+		} else if (incorrect === 3) {
+			$('#rope').addClass('show');
+		} else if (incorrect === 4) {
+			$('#head').addClass('show');
+		} else if (incorrect === 5) {
+			$('#left_arm').addClass('show');
+		} else if (incorrect === 6) {
+			$('#body').addClass('show');
+		} else if (incorrect === 7) {
+			$('#right_arm').addClass('show');
+		} else if (incorrect === 8) {
+			$('#left_leg').addClass('show');
+		} else if (incorrect === 9) {
+			$('#right_leg').addClass('show');
+			$('#lose').html('You have lost the game!').addClass('show');
 		}
 	}
 
