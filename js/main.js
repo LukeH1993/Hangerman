@@ -3,11 +3,6 @@ $ (function() {
 	//Variables
 	var words = ['chocolate', 'apple', 'orange', 'carrott' , 'crisps', 'cake'];
 	var characters = null;
-	//var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-	// 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-	// 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-	//var score = 0;
-	//var incorrect = [];
 
 	console.log(words.length);
 
@@ -51,50 +46,47 @@ $ (function() {
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Sets a score for the game. Everytime a guess is incorrect and a hangman limb is put on the screen.
 
-	// function scoreLose() {
-	// 	var loser = $('#lose').val(); //gets the value.
-	// 	$('#lose').val('Oh dear! You have lost all your limbs! And your rope! Try again?'); //sets the value.
-	// }
+	function hangman(correctanswer) {
 
-	// console.log(scoreLose());
-
-	// function scoreWin () {
-	// 	var winner = $('#win').val();
-	// 	$('#win').val('Well Done! You have won the game! You genius!');
-	// }
-
-	// console.log(scoreWin());
-
-	// function showLimb() {
-	// 	var next word;
-	// 	if (letters !== correctLetters) {
-	// 		$('#right_leg').fadeIn();
-	// 	} else if {
-	// 		$('#left_leg').fadeIn();
-	// 	} else if {
-	// 		$('#right_arm').fadeIn();
-	// 	} else if {
-	// 		$('#left_arm').fadeIn();
-	// 	} else if {
-	// 		$('#body').fadeIn();
-	// 	} else if {
-	// 		$('#head').fadeIn();
-	// 	} else if {
-	// 		$('#rope').fadeIn();
-	// 	} else if {
-	// 		$('#pole_top').fadeIn();
-	// 	}
-	// }
+		if(correctanswer === 1) {
+			$('#pole').addClass('.show');
+		}
+		if(correctanswer === 2) {
+			$('#pole_top').addClass('.show');
+		}
+		if(correctanswer === 3) {
+			$('#rope').addClass('.show');
+		}
+		if(correctanswer === 4) {
+			$('#head').addClass('.show');
+		}
+		if(correctanswer === 5) {
+			$('#left_arm').addClass('.show');
+		}
+		if(correctanswer === 6) {
+			$('#body').addClass('.show');
+		}
+		if(correctanswer === 7) {
+			$('#right_arm').addClass('.show');
+		}
+		if(correctanswer === 8) {
+			$('left_leg').addClass('.show');
+		}
+		if(correctanswer === 9) {
+			$('right_leg').addClass('.show');
+			$('#lose').html('Loser').addClass('.show');
+		}
+	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Resets the game once the reset button is selected.
-	$('#reset_button').on('click', function() {
-		$('.instructions').fadeIn();
-		for(var i = 0; i < characters.length; i++) {
-			if($(this).val() === characters[i]) {
-				$('.blanks').eq(i).html('_');
-				console.log($('.blanks').val());
-			}
-		}
-	});
+	// $('#reset_button').on('click', function() {
+	// 	$('.instructions').fadeIn();
+	// 	for(var i = 0; i < characters.length; i++) {
+	// 		if($(this).val() === characters[i]) {
+	// 			$('.blanks').eq(i).html('_');
+	// 			console.log($('.blanks').val());
+	// 		}
+	// 	}
+	// });
 })
