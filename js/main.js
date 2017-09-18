@@ -4,7 +4,7 @@ $ (function() {
 	var words = ['chocolate', 'apple', 'orange', 'carrott' , 'crisps', 'cake'];
 	var characters = null;
 	var incorrect = 0;
-	var gameScore = 0;
+	var gameScore = 1;
 
 	console.log(words.length);
 
@@ -34,12 +34,15 @@ $ (function() {
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
+	if (gameScore > 0) {
 	$('.letter').on('click', function () {
 		if (characters.includes($(this).val())) {
 			for(var i = 0; i < characters.length; i++) {
 				if($(this).val() === characters[i]) {
 					$('.blanks').eq(i).html($(this).val());
 					console.log($('.blanks').val());
+					gameScore++;
+					$('#new_score').html(gameScore);
 				}
 			}
 			console.log($(this).val());
@@ -47,22 +50,22 @@ $ (function() {
 			incorrect += 1;
 			hangman();
 			console.log(incorrect);
+			gameScore--;
+			$(this).hide();
+			if(gameScore <= 0) {
+				gameScore = 0;
+				$('#lose').html('GAME OVER! You have all your limbs and your rope is on display!!').addClass('show');
+				$('.game_buttons').hide();
+			}
+			$('#new_score').html(gameScore);
 		}
 	});
+		} else if (gameScore < 0) {
+			$('.game_buttons').hide();
+		}
+		console.log(gameScore);
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Score
-	function score() {
-		if(incorrect) {
-			gameScore -= 10;
-			console.log('I want to decrease your score');
-		} else {
-			gameScore += 10;
-			console.log('I want to increase your score');
-		}
-	}
-
-	console.log(score());
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Hangman is displayed when the guesses are incorrect.
