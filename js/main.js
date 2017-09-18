@@ -14,7 +14,7 @@ $ (function() {
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays blank spaces onto the screen.
-	characters = getRandomWord();
+	characters = getRandomWord().split('');
 	console.log(characters);
 
 	for(var i = 0; i < characters.length; i++) {
@@ -38,36 +38,17 @@ $ (function() {
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
-	correctLetters;
+
+	$ correctLetters.includes(characters, words);
 
 	$('.letter').on('click', function () {
 		for(var i = 0; i < letters.length; i++) {
 			if($(this).val() === letters[i]) {
-				console.log('This is a word');
+				//console.log('This is a word');
 			}
 		}
 		console.log($(this).val());
-
-	})
-	// $('.letter').on('click', function() {
-	// 	$('.letter').val(letters);
-	// 	letters.innerHTML;
-	// });
-
-	// var myButtons = document.getElementsByClassName('.letter');
-	// console.log(myButtons);
-
-	// for(var i = 0; i < myButtons.length; i++) {
-	// 	myButtons[i].addEventListener('click', function (event) {
-	// 		console.log('a');
-	// 	});
-	// }
-
-	//var getLetters = function () {
-		//	if ('.letter' === letters[0]) {
-		//	  letters.innerHTML 
-		//	} else if ('.letter' === categories[1]) {
-		//}
+	});
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Sets a score for the game. Everytime a guess is incorrect and a hangman limb is lost, 
