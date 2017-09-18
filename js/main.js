@@ -4,6 +4,7 @@ $ (function() {
 	var words = ['chocolate', 'apple', 'orange', 'carrott' , 'crisps', 'cake'];
 	var characters = null;
 	var incorrect = 0;
+	var gameScore = 0;
 
 	console.log(words.length);
 
@@ -33,7 +34,6 @@ $ (function() {
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
-
 	$('.letter').on('click', function () {
 		if (characters.includes($(this).val())) {
 			for(var i = 0; i < characters.length; i++) {
@@ -51,13 +51,24 @@ $ (function() {
 	});
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Sets a score for the game. Everytime a guess is inincorrect and a hangman limb is put on the screen.
+	// Score
+	function score() {
+		if(incorrect) {
+			gameScore - 10;
+			console.log('I want to decrease your score');
+		} else {
+			gameScore + 10;
+			console.log('I want to increase your score');
+		}
+	}
 
+	console.log(score());
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	// Hangman is displayed when the guesses are incorrect.
 	function hangman() {
-
 		if (incorrect === 1) {
 			$('#pole').addClass('show');
-			console.log('I want to work!');
 		} else if (incorrect === 2) {
 			$('#pole_top').addClass('show');
 		} else if (incorrect === 3) {
@@ -74,19 +85,13 @@ $ (function() {
 			$('#left_leg').addClass('show');
 		} else if (incorrect === 9) {
 			$('#right_leg').addClass('show');
-			$('#lose').html('You have lost the game!').addClass('show');
+			$('#lose').html('GAME OVER! You have all your limbs and your rope is on display!!').addClass('show');
 		}
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Resets the game once the reset button is selected.
-	// $('#reset_button').on('click', function() {
-	// 	$('.instructions').fadeIn();
-	// 	for(var i = 0; i < characters.length; i++) {
-	// 		if($(this).val() === characters[i]) {
-	// 			$('.blanks').eq(i).html('_');
-	// 			console.log($('.blanks').val());
-	// 		}
-	// 	}
-	// });
+	// Resets the game once the another play button is selected.
+	function playAgain() {
+		console.log('I want to work!');
+	}
 })
