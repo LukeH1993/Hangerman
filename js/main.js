@@ -39,27 +39,19 @@ $ (function() {
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
 
-	//correctLetters.includes(characters, words);
-
 	$('.letter').on('click', function () {
 		for(var i = 0; i < letters.length; i++) {
 			if($(this).val() === letters[i]) {
-				//console.log('This is a word');
+				letters.includes(characters);
+				$('.blanks').eq(0).html($('.letter').attr('value'));
+				console.log($('.blanks').attr('value'));
 			}
 		}
 		console.log($(this).val());
 	});
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Sets a score for the game. Everytime a guess is incorrect and a hangman limb is lost, 
-	// the score will decrease but each time a guess is correct it will increase.
-	// function score() {
-	// 	if (letters === words) {
-	// 		score++;
-	// 	} else {
-	// 		score--;
-	// 	}
-	// }
+	// Sets a score for the game. Everytime a guess is incorrect and a hangman limb is put on the screen.
 
 	// function scoreLose() {
 	// 	var loser = $('#lose').val(); //gets the value.
@@ -75,30 +67,26 @@ $ (function() {
 
 	// console.log(scoreWin());
 
-	// function hideLimb() {
-		// var next word;
-		// if (letters !== words) {
-		// 	$('#right_leg').fadeIn();
-		// } else if (next word) {
-		// 	$('#left_leg').fadeIn();
-		// } else if (next word) {
-		// 	$('#right_arm').fadeIn();
-		// } else if (next word) {
-		// 	$('#left_arm').fadeIn();
-		// } else if (next word) {
-		// 	$('#body').fadeIn();
-		// } else if (next word) {
-		// 	$('#head').fadeIn();
-		// } else if (next word) {
-		// 	$('#rope').fadeIn();
-		// } else if (next word) {
-		// 	$('#pole_top').fadeIn();
-		// }
+	// function showLimb() {
+	// 	var next word;
+	// 	if (letters !== correctLetters) {
+	// 		$('#right_leg').fadeIn();
+	// 	} else if {
+	// 		$('#left_leg').fadeIn();
+	// 	} else if {
+	// 		$('#right_arm').fadeIn();
+	// 	} else if {
+	// 		$('#left_arm').fadeIn();
+	// 	} else if {
+	// 		$('#body').fadeIn();
+	// 	} else if {
+	// 		$('#head').fadeIn();
+	// 	} else if {
+	// 		$('#rope').fadeIn();
+	// 	} else if {
+	// 		$('#pole_top').fadeIn();
+	// 	}
 	// }
-
-	//------------------------------------------------------------------------------------------------------------------------------
-	// Displays incorrect letters as they are typed.
-
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Resets the game once the reset button is selected.
