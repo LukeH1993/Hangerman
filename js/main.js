@@ -43,8 +43,8 @@ $ (function() {
 		for(var i = 0; i < letters.length; i++) {
 			if($(this).val() === letters[i]) {
 				letters.includes(characters);
-				$('.blanks').eq(0).html($('.letter').attr('value'));
-				console.log($('.blanks').attr('value'));
+				$('.blanks').eq(0).html($('.letter').val());
+				console.log($('.blanks').val());
 			}
 		}
 		console.log($(this).val());
