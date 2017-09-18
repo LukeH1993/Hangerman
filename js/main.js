@@ -54,10 +54,10 @@ $ (function() {
 	// Score
 	function score() {
 		if(incorrect) {
-			gameScore - 10;
+			gameScore -= 10;
 			console.log('I want to decrease your score');
 		} else {
-			gameScore + 10;
+			gameScore += 10;
 			console.log('I want to increase your score');
 		}
 	}
