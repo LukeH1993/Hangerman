@@ -3,10 +3,9 @@ $ (function() {
 	//Variables
 	var words = ['chocolate', 'apple', 'orange', 'carrott' , 'crisps', 'cake'];
 	var characters = null;
-	var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-	'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-	't', 'u', 'v', 'w', 'x', 'y', 'z'];
-	var correctLetters;
+	//var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+	// 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+	// 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 	//var score = 0;
 	//var incorrect = [];
 
@@ -40,10 +39,9 @@ $ (function() {
 	// Displays letters on the screen when the user selects the letter buttons.
 
 	$('.letter').on('click', function () {
-		for(var i = 0; i < letters.length; i++) {
-			if($(this).val() === letters[i]) {
-				letters.includes(characters);
-				$('.blanks').eq(0).html($('.letter').val());
+		for(var i = 0; i < characters.length; i++) {
+			if($(this).val() === characters[i]) {
+				$('.blanks').eq(i).html($(this).val());
 				console.log($('.blanks').val());
 			}
 		}
@@ -92,5 +90,11 @@ $ (function() {
 	// Resets the game once the reset button is selected.
 	$('#reset_button').on('click', function() {
 		$('.instructions').fadeIn();
+		for(var i = 0; i < characters.length; i++) {
+			if($(this).val() === characters[i]) {
+				$('.blanks').eq(i).html('_');
+				console.log($('.blanks').val());
+			}
+		}
 	});
 })
