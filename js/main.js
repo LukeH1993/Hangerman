@@ -3,11 +3,10 @@ $ (function() {
 	//Variables
 	var words = ['chocolate', 'apple', 'orange', 'carrott' , 'crisps', 'cake'];
 	var characters = null;
-	var categories;
-	var chosenCategory;
-	// var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-	// 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-	// 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+	var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+	'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+	't', 'u', 'v', 'w', 'x', 'y', 'z'];
+	var correctLetters;
 	//var score = 0;
 	//var incorrect = [];
 
@@ -39,6 +38,17 @@ $ (function() {
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
+	correctLetters;
+
+	$('.letter').on('click', function () {
+		for(var i = 0; i < letters.length; i++) {
+			if($(this).val() === letters[i]) {
+				console.log('This is a word');
+			}
+		}
+		console.log($(this).val());
+
+	})
 	// $('.letter').on('click', function() {
 	// 	$('.letter').val(letters);
 	// 	letters.innerHTML;
@@ -87,21 +97,21 @@ $ (function() {
 	// function hideLimb() {
 		// var next word;
 		// if (letters !== words) {
-		// 	$('#right_leg').fadeOut();
+		// 	$('#right_leg').fadeIn();
 		// } else if (next word) {
-		// 	$('#left_leg').fadeOut();
+		// 	$('#left_leg').fadeIn();
 		// } else if (next word) {
-		// 	$('#right_arm').fadeOut();
+		// 	$('#right_arm').fadeIn();
 		// } else if (next word) {
-		// 	$('#left_arm').fadeOut();
+		// 	$('#left_arm').fadeIn();
 		// } else if (next word) {
-		// 	$('#body').fadeOut();
+		// 	$('#body').fadeIn();
 		// } else if (next word) {
-		// 	$('#head').fadeOut();
+		// 	$('#head').fadeIn();
 		// } else if (next word) {
-		// 	$('#rope').fadeOut();
+		// 	$('#rope').fadeIn();
 		// } else if (next word) {
-		// 	$('#pole_top').fadeOut();
+		// 	$('#pole_top').fadeIn();
 		// }
 	// }
 
