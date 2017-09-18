@@ -39,7 +39,7 @@ $ (function() {
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
 
-	$ correctLetters.includes(characters, words);
+	//correctLetters.includes(characters, words);
 
 	$('.letter').on('click', function () {
 		for(var i = 0; i < letters.length; i++) {
