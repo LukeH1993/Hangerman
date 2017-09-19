@@ -12,7 +12,8 @@ $ (function() {
 	var words = ['petit fours', 'cheesy nachos', 'french fries', 'cheeseburger' , 'apple', 'fruit scone'];
 	var characters = null;
 	var incorrect = 0;
-	var gameScore = 5;
+	var correct = null;
+	var gameScore = 10;
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	function constructBlanks() {
@@ -37,6 +38,7 @@ $ (function() {
 	game();
 	//------------------------------------------------------------------------------------------------------------------------------
 	function game() {
+		gameScore = 5;
 		if (gameScore > 0) {
 		$('.letter').on('click', function () {
 			if (characters.includes($(this).val())) {
@@ -49,6 +51,10 @@ $ (function() {
 					}
 				}
 				console.log($(this).val());
+				if (correct === words.length) {
+					$('#losewin').html('YOU WIN!! Your final score is ' + gameScore).addClass('show');
+					$('.game_buttons').hide();
+				}
 			} else {
 				incorrect += 1;
 				showHangman();
@@ -59,10 +65,7 @@ $ (function() {
 					gameScore = 0;
 					$('#losewin').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
 					$('.game_buttons').hide();
-				} else if (gameScore >= 20) {
-					$('#losewin').html('YOU WIN!! Your final score is ' + gameScore).addClass('show');
-					$('.game_buttons').hide();
-				}
+				} 
 				$('#new_score').html(gameScore);
 			}
 		});
@@ -70,6 +73,7 @@ $ (function() {
 				$('.game_buttons').hide();
 			}
 	}
+
 	//------------------------------------------------------------------------------------------------------------------------------
 	function showHangman() {
 		if (incorrect === 1) {
@@ -99,7 +103,7 @@ $ (function() {
 		} else if (incorrect === 9) {
 			$('#right_leg').addClass('show');
 			gameScore--;
-			$('#lose').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
+			$('#losewin').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
 		}
 	}
 	//------------------------------------------------------------------------------------------------------------------------------
@@ -109,16 +113,13 @@ $ (function() {
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	//function retry() {
-		$('#game_button').on('click', function () {
-			$('.letter').show();
-			$('.game_buttons').show();
-			incorrect = 0;
-			hideHangman();
-			$('.blanks').remove();
-			constructBlanks();
-			$('#losewin').addClass('hide');
-			gameScore = 5;
-		})
-	//}
+	$('#game_button').on('click', function () { 
+		$('.letter').show();
+		$('.game_buttons').show();
+		incorrect = 0;
+		hideHangman();
+		$('.blanks').remove();
+		constructBlanks();
+		$('#losewin').html('');
+	});
 })
