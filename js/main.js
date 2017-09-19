@@ -41,7 +41,6 @@ $ (function() {
 	});
 
 	game();
-
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
 	function game() {
@@ -75,7 +74,7 @@ $ (function() {
 				$('.game_buttons').hide();
 			}
 			console.log(gameScore);
-		}
+	}
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Hangman is displayed when the guesses are incorrect.
 	function hangman() {
