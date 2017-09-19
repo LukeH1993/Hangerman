@@ -41,6 +41,7 @@ $ (function() {
 	});
 
 	game();
+
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
 	function game() {
@@ -62,9 +63,6 @@ $ (function() {
 				console.log(incorrect);
 				gameScore--;
 				$(this).hide();
-			}
-		}
-
 				if(gameScore <= 0) {
 					gameScore = 0;
 					$('#lose').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
