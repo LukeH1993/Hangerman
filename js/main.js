@@ -17,7 +17,6 @@ $ (function() {
 	console.log(words.length);
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Displays blank spaces onto the screen.
 	characters = getRandomWord().split('');
 	console.log(characters);
 
@@ -26,7 +25,6 @@ $ (function() {
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Displays a new hangman word at random on the screen.
 	function getRandomWord() {
 		var random = Math.floor(Math.random() * words.length);
 		return words[random];
@@ -35,14 +33,12 @@ $ (function() {
 	console.log(getRandomWord());
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Fades out instruction screen and displays the game screen.
 	$('#inst_button').on('click', function() {
 		$('.instructions').fadeOut();
 	});
 
 	game();
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Displays letters on the screen when the user selects the letter buttons.
 	function game() {
 		if (gameScore > 0) {
 		$('.letter').on('click', function () {
@@ -58,7 +54,7 @@ $ (function() {
 				console.log($(this).val());
 			} else {
 				incorrect += 1;
-				hangman();
+				showHangman();
 				console.log(incorrect);
 				gameScore--;
 				$(this).hide();
@@ -76,8 +72,7 @@ $ (function() {
 			console.log(gameScore);
 	}
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Hangman is displayed when the guesses are incorrect.
-	function hangman() {
+	function showHangman() {
 		if (incorrect === 1) {
 			$('#pole').addClass('show');
 			gameScore--;
@@ -108,10 +103,29 @@ $ (function() {
 			$('#lose').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
 		}
 	}
+	//------------------------------------------------------------------------------------------------------------------------------
+	function hideHangman() {
+		$('.man').removeClass('show');
+		$('.man').addClass('hide');
+	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	// Resets the game once the another play button is selected.
-	function playAgain() {
-		console.log('I want to work!');
+	function win() {
+		if (gameScore >= 10) {
+			$('#win').html('YOU WIN! Your final score is ' + gameScore).addClass('show');
+		} else if (gameScore <= 0) {
+			$('#lose').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	function retry() {
+		$('#game_button').on('click', function () {
+			$('.game_buttons').show();
+			gameScore = 5;
+			incorrect = 0;
+			hideHangman();
+			game();
+		});
 	}
 })
