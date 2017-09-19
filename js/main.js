@@ -14,11 +14,8 @@ $ (function() {
 	var incorrect = 0;
 	var gameScore = 5;
 
-	console.log(words.length);
-
 	//------------------------------------------------------------------------------------------------------------------------------
 	characters = getRandomWord().split('');
-	console.log(characters);
 
 	for(var i = 0; i < characters.length; i++) {
 	 	$('.blank_spaces').append('<div class="blanks">_</div>');
@@ -29,8 +26,6 @@ $ (function() {
 		var random = Math.floor(Math.random() * words.length);
 		return words[random];
 	}
-
-	console.log(getRandomWord());
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	$('#inst_button').on('click', function() {
@@ -55,7 +50,7 @@ $ (function() {
 			} else {
 				incorrect += 1;
 				showHangman();
-				console.log(incorrect);
+				console.log('incorrect: ' + incorrect);
 				gameScore--;
 				$(this).hide();
 				if(gameScore <= 0) {
@@ -69,7 +64,6 @@ $ (function() {
 			} else if (gameScore < 0) {
 				$('.game_buttons').hide();
 			}
-			console.log(gameScore);
 	}
 	//------------------------------------------------------------------------------------------------------------------------------
 	function showHangman() {
@@ -119,13 +113,13 @@ $ (function() {
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	function retry() {
+	// function retry() {
 		$('#game_button').on('click', function () {
+			$('.letter').show();
 			$('.game_buttons').show();
 			gameScore = 5;
 			incorrect = 0;
 			hideHangman();
-			game();
 		});
-	}
+	// }
 })
