@@ -15,12 +15,13 @@ $ (function() {
 	var gameScore = 5;
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	characters = getRandomWord().split('');
+	function constructBlanks() {
+		characters = getRandomWord().split('');
 
-	for(var i = 0; i < characters.length; i++) {
-	 	$('.blank_spaces').append('<div class="blanks">_</div>');
+		for(var i = 0; i < characters.length; i++) {
+		 	$('.blank_spaces').append('<div class="blanks">_</div>');
+		}
 	}
-
 	//------------------------------------------------------------------------------------------------------------------------------
 	function getRandomWord() {
 		var random = Math.floor(Math.random() * words.length);
@@ -32,6 +33,7 @@ $ (function() {
 		$('.instructions').fadeOut();
 	});
 
+	constructBlanks();
 	game();
 	//------------------------------------------------------------------------------------------------------------------------------
 	function game() {
@@ -120,6 +122,8 @@ $ (function() {
 			gameScore = 5;
 			incorrect = 0;
 			hideHangman();
+			$('.blanks').remove();
+			constructBlanks();
 		});
 	// }
 })
