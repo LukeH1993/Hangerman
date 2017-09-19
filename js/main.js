@@ -57,7 +57,10 @@ $ (function() {
 				$(this).hide();
 				if(gameScore <= 0) {
 					gameScore = 0;
-					$('#lose').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
+					$('#losewin').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
+					$('.game_buttons').hide();
+				} else if (gameScore >= 20) {
+					$('#losewin').html('YOU WIN!! Your final score is ' + gameScore).addClass('show');
 					$('.game_buttons').hide();
 				}
 				$('#new_score').html(gameScore);
@@ -106,24 +109,16 @@ $ (function() {
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
-	function win() {
-		if (gameScore >= 10) {
-			$('#win').html('YOU WIN! Your final score is ' + gameScore).addClass('show');
-		} else if (gameScore <= 0) {
-			$('#lose').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
-		}
-	}
-
-	//------------------------------------------------------------------------------------------------------------------------------
-	// function retry() {
+	//function retry() {
 		$('#game_button').on('click', function () {
 			$('.letter').show();
 			$('.game_buttons').show();
-			gameScore = 5;
 			incorrect = 0;
 			hideHangman();
 			$('.blanks').remove();
 			constructBlanks();
-		});
-	// }
+			$('#losewin').addClass('hide');
+			gameScore = 5;
+		})
+	//}
 })
