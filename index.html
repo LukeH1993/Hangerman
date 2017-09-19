@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Hangman</title>
+	<title>Hungryman</title>
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -19,14 +19,32 @@
 
 		<div class="instructions">
 
-			<h1 id="inst_heading">Hangman</h1>
+			<h1 id="inst_heading">Hungryman</h1>
 
 			<p id="inst_paragraph">A random word will be displayed on the screen. You're quest is to use your imagination and
 			guess the correct answer, which will score you points. If you guess wrong, you will lose a limb, as well as a point. 
 			Each correct guess will score you 10 points, but each incorrect guess will lose you 10 points. If you lose all your
 			limbs, you will lose all your points. Once you get 100 points, you have won the game.</p>
 
-			<button id="inst_button">Let's Play</button>
+			<div class="button_div">
+				<button id="inst_button">Let's Play</button>
+			</div>
+
+			<div class="bottom_left">
+				<img src="images/chocolate.png">
+			</div>
+
+			<div class="bottom_center_left">
+				<img src="images/donut.png">
+			</div>
+
+			<div class="bottom_center_right">
+				<img src="images/apple.png">
+			</div>
+
+			<div class="bottom_right">
+				<img src="images/cheesy-nachos.png">
+			</div>
 
 		</div>
 
@@ -82,11 +100,12 @@
 				<h2 id="new_score">5</h2>
 			</div>
 
-			<h1 class="hide" id="lose">Loser<h1>
+			<h1 class="hide" id="lose">Loser</h1>
 
 			<button id="game_button">Another go!</button>
 
 		</div>
+	</div>
 
 </body>
 

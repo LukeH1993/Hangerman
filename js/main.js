@@ -9,7 +9,7 @@
 $ (function() {
 
 	//Variables
-	var words = ['chocolate', 'apple', 'orange', 'carrott' , 'crisps', 'cake'];
+	var words = ['petit fours', 'cheesy nachos', 'french fries', 'cheeseburger' , 'apple', 'fruit scone'];
 	var characters = null;
 	var incorrect = 0;
 	var gameScore = 5;
