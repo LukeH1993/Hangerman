@@ -40,8 +40,10 @@ $ (function() {
 		$('.instructions').fadeOut();
 	});
 
+	game();
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Displays letters on the screen when the user selects the letter buttons.
+	function game() {
 		if (gameScore > 0) {
 		$('.letter').on('click', function () {
 			if (characters.includes($(this).val())) {
@@ -60,6 +62,9 @@ $ (function() {
 				console.log(incorrect);
 				gameScore--;
 				$(this).hide();
+			}
+		}
+
 				if(gameScore <= 0) {
 					gameScore = 0;
 					$('#lose').html('GAME OVER! Your final score is ' + gameScore).addClass('show');
@@ -72,7 +77,7 @@ $ (function() {
 				$('.game_buttons').hide();
 			}
 			console.log(gameScore);
-
+		}
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Hangman is displayed when the guesses are incorrect.
 	function hangman() {
