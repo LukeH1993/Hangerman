@@ -9,7 +9,7 @@ body {
 	margin: 0 auto;
 	position: fixed;
 	z-index: 2;
-	height: 780px;
+	height: 770px;
 	width: 1200px;
 	background-image: url('../images/notebook.jpg');
 	background-size: 720px 1200px;
@@ -36,6 +36,7 @@ body {
 	font-size: 24px;
 	transform-style: preserve-3d;
 	background-color: yellow;
+	cursor: pointer;
 }
 
 #inst_button:after {
@@ -54,7 +55,7 @@ body {
 	margin: 0 auto;
 	position: fixed;
 	z-index: 1;
-	height: 780px;
+	height: 770px;
 	width: 1200px;
 	background-image: url('../images/notebook.jpg');
 	background-size: 720px 1200px;
@@ -74,6 +75,7 @@ body {
 	font: 100 50px/1.3 'Oleo Script', Helvetica, sans-serif;
   	color: #2b2b2b;
   	text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+  	cursor: pointer;
 }
 
 #pole_top {
@@ -224,6 +226,7 @@ body {
 	font-family: Tahoma;
 	font-size: 18px;
 	background-color: yellow;
+	cursor: ;
 }
 
 .bottom_left {

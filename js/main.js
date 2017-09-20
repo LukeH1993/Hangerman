@@ -1,11 +1,3 @@
-// Things to do today...
-
-// Stop the game from working once the hangman is on full display.
-// Make the game reloop so once a word is complete it can move onto the next word.
-// Create a restart button that will restart the game.
-// Change the styles of the game to make it look more eye-catching.
-// Make sure the score is displayed in a message at the end of the game.
-
 $ (function() {
 
 	// Variables
@@ -18,6 +10,7 @@ $ (function() {
 	var start;
 
 	//------------------------------------------------------------------------------------------------------------------------------
+	// Produces the blank spaces onto the screen.
 	function constructBlanks() {
 		characters = getRandomWord().split('');
 
@@ -27,12 +20,14 @@ $ (function() {
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
+	// Produces a random word for each new round.
 	function getRandomWord() {
 		var random = Math.floor(Math.random() * words.length);
 		return words[random];
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
+	// Starts the game.
 	$('#inst_button').on('click', function() {
 		$('.instructions').fadeOut();
 	});
@@ -41,8 +36,10 @@ $ (function() {
 	game();
 
 	//------------------------------------------------------------------------------------------------------------------------------
+	// Sets up the games functionality.
 	function game() {
 		$('.letter').on('click', function () {
+			//playSound('sounds/magic.mp3');
 			if (characters.includes($(this).val())) {
 				for(var i = 0; i < characters.length; i++) {
 					if($(this).val() === characters[i]) {
@@ -54,8 +51,8 @@ $ (function() {
 				console.log($(this).val());
 
 				if ($('.blanks:contains("_")').length === 0) {
-				
-					$('#losewin').html('YOU DID IT! WELL DONE!! WANT ANOTHER GO?').removeClass('hide');
+					playSound('sounds/success.mp3');
+					$('#losewin').html('WELL DONE! HANGERMAN LIVES! WANT ANOTHER GO?').removeClass('hide');
 					$('.game_buttons').hide();
 				}
 			} else {
@@ -68,7 +65,9 @@ $ (function() {
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
+	// Makes the hangman show on the screen.
 	function showHangman() {
+		playSound('sounds/bang.mp3');
 		if (incorrect === 1) {
 			$('#pole').addClass('show');
 		} else if (incorrect === 2) {
@@ -87,17 +86,20 @@ $ (function() {
 			$('#left_leg').addClass('show');
 		} else if (incorrect === 9) {
 			$('#right_leg').addClass('show');
-			$('#losewin').html('GAME OVER!').addClass('show');
+			$('#losewin').html('GAME OVER! HANGERMAN IS HUNG!').addClass('show');
+			playSound('sounds/fail.mp3');
 		}
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
+	// Makes the hangman disappear from the screen.
 	function hideHangman() {
 		$('.man').removeClass('show');
 		$('.man').addClass('hide');
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
+	// Runs a timer throughout each game round.
 	function timer() {
 		start = new Date;
 
@@ -109,6 +111,15 @@ $ (function() {
 	timer();
 
 	//------------------------------------------------------------------------------------------------------------------------------
+	// Plays audio files.
+	function playSound(path) {
+        var sound = document.createElement('audio');
+        sound.setAttribute('src', path);
+        sound.play();
+    }
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	// Resets the game.
 	$('#game_button').on('click', function () { 
 		$('.letter').show();
 		$('.game_buttons').show();
