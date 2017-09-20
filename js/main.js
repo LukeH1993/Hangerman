@@ -125,7 +125,6 @@ $ (function() {
 	function timer(length) {
 		clearInterval(timeLeft);
 		time = new Date;
-
 		timeLeft = setInterval(function() {
 			var secs = length - (parseInt((new Date - time) / 1000));
 			$('.timer').text(secs + ' seconds');
@@ -134,7 +133,6 @@ $ (function() {
 				lose();
 			}
 		}, 1000);
-		
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
