@@ -30,37 +30,31 @@ body {
 }
 
 #inst_button_easy {
-	display: inline-block;
-	height: 75px;
+	color: #900;
+	font-size: 30px;
+	height: 80px;
 	width: 200px;
-	font-family: Tahoma;
-	font-size: 24px;
-	transform-style: preserve-3d;
-	background-color: yellow;
+	background: #FF0;
+	font-weight: bold;
+	border: 1px solid #900;
+}
+
+#inst_button_easy:hover {
 	cursor: pointer;
 }
 
 #inst_button_hard {
-	display: inline-block;
-	height: 75px;
+	color: #900;
+	font-size: 30px;
+	height: 80px;
 	width: 200px;
-	font-family: Tahoma;
-	font-size: 24px;
-	transform-style: preserve-3d;
-	background-color: yellow;
-	cursor: pointer;
+	background: #FF0;
+	font-weight: bold;
+	border: 1px solid #900;
 }
 
-#inst_button:after {
-	top: -100%;
-	left: 0px;
-	width: 100%;
-	position: absolute;
-	background: #3a9999;
-	border-radius: 5px;
-	content: 'Best of Luck!!';
-	transform-origin: left bottom;
-	transform: rotateX(90deg);
+#inst_button_hard:hover {
+	cursor: pointer;
 }
 
 .game {
@@ -232,13 +226,17 @@ body {
 	border-radius: none;
 }
 
-#game_button {
-	display: inline-block;
-	height: 50px;
+#game_button{
+	color: #900;
+	font-size: 30px;
+	height: 80px;
 	width: 200px;
-	font-family: Tahoma;
-	font-size: 18px;
-	background-color: yellow;
+	background: #FF0;
+	font-weight: bold;
+	border: 1px solid #900;
+}
+
+#game_button:hover {
 	cursor: pointer;
 }
 

@@ -34,12 +34,14 @@ $ (function() {
 		$('.instructions').fadeOut();
 		difficulty = 10;
 		timer(difficulty);
+		playSound('sounds/eating.mp3');
 	});
 
 	$('#inst_button_hard').on('click', function() {
 		$('.instructions').fadeOut();
 		difficulty = 10;
 		timer(difficulty);
+		playSound('sounds/eating.mp3');
 	});
 
 	constructBlanks();
@@ -145,14 +147,15 @@ $ (function() {
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Resets the game.
-	$('#game_button').on('click', function () { 
-		$('.letter').show();
-		$('.game_buttons').show();
-		incorrect = 0;
-		hideHangman();
-		$('.blanks').remove();
-		constructBlanks();
-		$('#losewin').html('');
-		timer(difficulty);
-	});
+		$('#game_button').on('click', function () { 
+			playSound('sounds/eating.mp3');
+			$('.letter').show();
+			$('.game_buttons').show();
+			incorrect = 0;
+			hideHangman();
+			$('.blanks').remove();
+			constructBlanks();
+			$('#losewin').html('');
+			timer(difficulty);
+		});
 })
