@@ -51,7 +51,6 @@ $ (function() {
 	// Sets up the games functionality.
 	function game() {
 		$('.letter').on('click', function () {
-			//playSound('sounds/magic.mp3');
 			if (characters.includes($(this).val())) {
 				for(var i = 0; i < characters.length; i++) {
 					if($(this).val() === characters[i]) {
