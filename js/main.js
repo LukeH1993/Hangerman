@@ -8,8 +8,9 @@
 
 $ (function() {
 
-	//Variables
-	var words = ['petit-fours', 'cheesy-nachos', 'french-fries', 'cheeseburger' , 'apple', 'fruit-scone'];
+	// Variables
+	var words = ['petit-fours', 'cheesy-nachos', 'french-fries', 'cheeseburger' , 'apple-crumble', 'fruit-scone',
+	'spaghetti-bolognese', 'chicken-nuggets', 'pizza', 'lasagna', 'roast-chicken', 'toad-in-the-hole'];
 	var characters = null;
 	var incorrect = 0;
 	var correct = [];
@@ -54,7 +55,7 @@ $ (function() {
 
 				if ($('.blanks:contains("_")').length === 0) {
 				
-					$('#losewin').html('YOU WIN!!').removeClass('hide');
+					$('#losewin').html('YOU DID IT! WELL DONE!! WANT ANOTHER GO?').removeClass('hide');
 					$('.game_buttons').hide();
 				}
 			} else {
