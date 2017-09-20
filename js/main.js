@@ -7,7 +7,8 @@ $ (function() {
 	var incorrect = 0;
 	var correct = [];
 	var gameScore = 10;
-	var start;
+	var time = null;
+	var timeLeft = null;
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Produces the blank spaces onto the screen.
@@ -87,9 +88,13 @@ $ (function() {
 			$('#left_leg').addClass('show');
 		} else if (incorrect === 9) {
 			$('#right_leg').addClass('show');
-			$('#losewin').html('GAME OVER! HANGERMAN IS HUNG!').addClass('show');
-			playSound('sounds/fail.mp3');
+			lose();
 		}
+	}
+
+	function lose() {
+		$('#losewin').html('GAME OVER!').addClass('show');
+		playSound('sounds/fail.mp3');
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
@@ -102,15 +107,19 @@ $ (function() {
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Runs a timer throughout each game round.
 	function timer() {
-		start = new Date;
+		clearInterval(timeLeft);
+		time = new Date;
 
-		setInterval(function() {
-			$('.timer').text(30 - (parseInt((new Date - start) / 1000)) + ' seconds');
+		timeLeft = setInterval(function() {
+			var secs = 10 - (parseInt((new Date - time) / 1000));
+			$('.timer').text(secs + ' seconds');
+			if (secs == 0) {
+				clearInterval(timeLeft);
+				lose();
+			}
+
 		}, 1000);
-
-		if(start <= 0) {
-			clearInterval(setInterval);
-		}
+		
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
