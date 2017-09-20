@@ -9,6 +9,7 @@ $ (function() {
 	var gameScore = 10;
 	var time = null;
 	var timeLeft = null;
+	var difficulty = null;
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Produces the blank spaces onto the screen.
@@ -29,9 +30,16 @@ $ (function() {
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Starts the game.
-	$('#inst_button').on('click', function() {
+	$('#inst_button_easy').on('click', function() {
 		$('.instructions').fadeOut();
-		timer();
+		difficulty = 10;
+		timer(difficulty);
+	});
+
+	$('#inst_button_hard').on('click', function() {
+		$('.instructions').fadeOut();
+		difficulty = 10;
+		timer(difficulty);
 	});
 
 	constructBlanks();
@@ -53,8 +61,7 @@ $ (function() {
 				console.log($(this).val());
 
 				if ($('.blanks:contains("_")').length === 0) {
-					playSound('sounds/success.mp3');
-					$('#losewin').html('WELL DONE! HANGERMAN LIVES! WANT ANOTHER GO?').removeClass('hide');
+					win();
 					$('.game_buttons').hide();
 				}
 			} else {
@@ -92,9 +99,16 @@ $ (function() {
 		}
 	}
 
+	function win() {
+		$('#losewin').html('WELL DONE! YOU WIN! WANT ANOTHER GO?').removeClass('hide');
+		playSound('sounds/success.mp3');
+		clearInterval(timeLeft);
+	}
+
 	function lose() {
 		$('#losewin').html('GAME OVER!').addClass('show');
 		playSound('sounds/fail.mp3');
+		$('.letter').hide();
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
@@ -106,18 +120,17 @@ $ (function() {
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Runs a timer throughout each game round.
-	function timer() {
+	function timer(length) {
 		clearInterval(timeLeft);
 		time = new Date;
 
 		timeLeft = setInterval(function() {
-			var secs = 10 - (parseInt((new Date - time) / 1000));
+			var secs = length - (parseInt((new Date - time) / 1000));
 			$('.timer').text(secs + ' seconds');
 			if (secs == 0) {
 				clearInterval(timeLeft);
 				lose();
 			}
-
 		}, 1000);
 		
 	}
@@ -140,6 +153,6 @@ $ (function() {
 		$('.blanks').remove();
 		constructBlanks();
 		$('#losewin').html('');
-		timer();
+		timer(difficulty);
 	});
 })
