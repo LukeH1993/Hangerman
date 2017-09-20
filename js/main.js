@@ -30,6 +30,7 @@ $ (function() {
 	// Starts the game.
 	$('#inst_button').on('click', function() {
 		$('.instructions').fadeOut();
+		timer();
 	});
 
 	constructBlanks();
@@ -104,11 +105,13 @@ $ (function() {
 		start = new Date;
 
 		setInterval(function() {
-			$('.timer').text((new Date - start) / 1000 + ' seconds');
+			$('.timer').text(30 - (parseInt((new Date - start) / 1000)) + ' seconds');
 		}, 1000);
-	}
 
-	timer();
+		if(start <= 0) {
+			clearInterval(setInterval);
+		}
+	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// Plays audio files.

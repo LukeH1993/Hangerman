@@ -30,6 +30,18 @@ body {
 }
 
 #inst_button {
+	display: inline-block;
+	height: 75px;
+	width: 200px;
+	font-family: Tahoma;
+	font-size: 24px;
+	transform-style: preserve-3d;
+	background-color: yellow;
+	cursor: pointer;
+}
+
+#inst_button_2 {
+	display: inline-block;
 	height: 75px;
 	width: 200px;
 	font-family: Tahoma;
