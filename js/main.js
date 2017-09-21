@@ -3,7 +3,7 @@ $ (function() {
 	// Variables
 	var words = ['chicken-nuggets', 'apple', 'creme-brulee', 'pizza', 'melon', 
 	'cheeseburger', 'salad', 'pasta', 'chocolate', 'strawberries', 'lasagna', 'curry', 
-	'cheesy-nachos', 'donut', ];
+	'cheesy-nachos', 'donut'];
 	var characters = null;
 	var incorrect = 0;
 	var correct = [];
