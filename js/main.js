@@ -57,11 +57,8 @@ $ (function() {
 					if($(this).val() === characters[i]) {
 						$('.blanks').eq(i).html($(this).val());
 						correct.push($(this).val());
-						console.log($('.blanks').val());
 					}
 				}
-				console.log($(this).val());
-
 				if ($('.blanks:contains("_")').length === 0) {
 					win();
 					$('.game_buttons').hide();
@@ -69,7 +66,6 @@ $ (function() {
 			} else {
 				incorrect += 1;
 				showHangman();
-				console.log('incorrect: ' + incorrect);
 				$(this).hide();
 			}
 		});
