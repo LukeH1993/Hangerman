@@ -11,6 +11,8 @@ body {
 	z-index: 2;
 	height: 770px;
 	width: 1200px;
+	padding-left: 10px;
+	padding-right: 10px;
 	background-image: url('../images/notebook.jpg');
 	background-size: 720px 1200px;
 	text-align: center;
@@ -64,6 +66,8 @@ body {
 	z-index: 1;
 	height: 770px;
 	width: 1200px;
+	padding-left: 10px;
+	padding-right: 10px;
 	background-image: url('../images/notebook.jpg');
 	background-size: 720px 1200px;
 	text-align: center;

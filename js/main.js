@@ -1,8 +1,9 @@
 $ (function() {
 
 	// Variables
-	var words = ['petit-fours', 'cheesy-nachos', 'french-fries', 'cheeseburger' , 'apple-crumble', 'fruit-scone',
-	'spaghetti-bolognese', 'chicken-nuggets', 'pizza', 'lasagna', 'roast-chicken', 'toad-in-the-hole'];
+	var words = ['chicken-nuggets', 'apple', 'creme-brulee', 'pizza', 'melon', 
+	'cheeseburger', 'salad', 'pasta', 'chocolate', 'strawberries', 'lasagna', 'curry', 
+	'cheesy-nachos', 'donut', ];
 	var characters = null;
 	var incorrect = 0;
 	var correct = [];
@@ -32,14 +33,14 @@ $ (function() {
 	// Starts the game.
 	$('#inst_button_easy').on('click', function() {
 		$('.instructions').fadeOut();
-		difficulty = 10;
+		difficulty = 60;
 		timer(difficulty);
 		playSound('sounds/eating.mp3');
 	});
 
 	$('#inst_button_hard').on('click', function() {
 		$('.instructions').fadeOut();
-		difficulty = 10;
+		difficulty = 30;
 		timer(difficulty);
 		playSound('sounds/eating.mp3');
 	});
@@ -110,6 +111,7 @@ $ (function() {
 		$('#losewin').html('GAME OVER!').addClass('show');
 		playSound('sounds/fail.mp3');
 		$('.letter').hide();
+		clearInterval(timeLeft);
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------
