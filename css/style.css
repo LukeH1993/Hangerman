@@ -44,6 +44,7 @@ body {
 
 #inst_button_easy:hover {
 	cursor: pointer;
+	background-color: orange;
 }
 
 #inst_button_hard {
@@ -58,6 +59,7 @@ body {
 
 #inst_button_hard:hover {
 	cursor: pointer;
+	background-color: orange;
 }
 
 .game {
@@ -87,6 +89,10 @@ body {
   	color: #2b2b2b;
   	text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
   	cursor: pointer;
+}
+
+.letter:hover {
+	background-color: yellow;
 }
 
 #pole_top {
@@ -243,6 +249,7 @@ body {
 
 #game_button:hover {
 	cursor: pointer;
+	background-color: orange;
 }
 
 .bottom_left {
