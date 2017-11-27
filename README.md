@@ -1,4 +1,4 @@
-# Project One
+# Hangerman
 
 ## How To Play
 * Players are required to select the correct letters to fill in the missing blanks of a hangman word, which is associated with a type of food.
